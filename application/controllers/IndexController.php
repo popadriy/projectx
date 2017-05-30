@@ -39,6 +39,13 @@ class IndexController extends Zend_Controller_Action
 	public function indexAction()
 	{
 		$this->view->headTitle('Hello World');
+		
+		$userModel = new Application_Model_User();
+		$userModel->setNume_utilzator('dasdasd');
+		$userModel->setparola(md5('asdasdasd'));
+		
+		
+		
 	}
 
 
