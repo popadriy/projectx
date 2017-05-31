@@ -49,7 +49,7 @@ class Application_Model_UserMapper
     /**
      * Return instance of Zend_Db_Table_Abstract set for this mapper
      *
-     * @return Application_Model_DbTable_Guestbook
+     * @return Application_Model_DbTable_User
      */
     public function getDbTable()
     {
@@ -69,10 +69,12 @@ class Application_Model_UserMapper
     public function save(Application_Model_User $user)
     {
         $data = array(
-            'email'   => $user->getEmail(),
-            'comment' => $user->getComment(),
-            'created' => date('Y-m-d H:i:s'),
+            'nume_utilizator'   => $user->getNume_utilizator(),
+            'parola' => $user->getParola(),
+        	'nume_doctor' => $user->getNume_doctor(),
+        	'specialitate' => $user->getSpecialitate(),
         );
+        
 
         if (null === ($id = $user->getId())) {
             unset($data['id']);
@@ -96,13 +98,14 @@ class Application_Model_UserMapper
             return;
         }
         $row = $result->current();
-        $user->setId($row->id)
-                  ->setEmail($row->email)
-                  ->setComment($row->comment)
-                  ->setCreated($row->created);
+        $user->setId_user($row->id)
+                  ->setNume_utilizator($row->nume_utilizator)
+                  ->setParola($row->parola)
+                  ->setNume_doctor($row->nume_doctor)
+                  ->setSpecialitate($row->specialitate);
     }
-    
-    
+
+   
     /**
      * Fetch all records from Model used
      *
@@ -110,18 +113,17 @@ class Application_Model_UserMapper
      */
     public function fetchAll()
     {
-    	$resultSet = $this->getDbTable()->fetchAll();
-    	$entries   = array();
-    	foreach ($resultSet as $row) {
-    		$entry = new Application_Model_User();
-    		$entry->setId($row->id)
-    		->setEmail($row->email)
-    		->setComment($row->comment)
-    		->setCreated($row->created);
-    		$entries[] = $entry;
-    	}
-    	return $entries;
+        $resultSet = $this->getDbTable()->fetchAll();
+        $entries   = array();
+        foreach ($resultSet as $row) {
+            $entry = new Application_Model_User();
+            $entry->setId_user($row->id)
+            	  ->setNume_utilizator($row->nume_utilizator)
+            	  ->setParola($row->parola)
+            	  ->setNume_doctor($row->nume_doctor)
+            	  ->setSpecialitate($row->specialitate);
+            $entries[] = $entry;
+        }
+        return $entries;
     }
-
-    
 }
