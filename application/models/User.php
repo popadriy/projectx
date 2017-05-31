@@ -61,16 +61,6 @@ class Application_Model_User
         return $this;
     }
 
-    public function setNume_utilizator($text)
-    {
-        $this->_nume_utilizator = (string) $text;
-        return $this;
-    }
-
-    public function getNume_utilizator()
-    {
-        return $this->_comment;
-    }
 
     public function setId_user($id)
     {
@@ -81,5 +71,53 @@ class Application_Model_User
     public function getId_user()
     {
     	return $this->_id_user;
+    }
+    
+    
+    public function setNume_utilizator($text)
+    {
+    	$this->_nume_utilizator = (string) $text;
+    	return $this;
+    }
+    
+    public function getNume_utilizator()
+    {
+    	return $this->_nume_utilizator;
+    }
+    
+    
+    public function setParola($text)
+    {
+    	$this->_parola = (string) $text;
+    	return $this;
+    }
+    
+    public function getParola()
+    {
+    	return $this->_parola;
+    }
+    
+    
+    public function setNume_doctor($text)
+    {
+    	$this->_nume_doctor= (string) $text;
+    	return $this;
+    }
+    
+    public function getNume_doctor()
+    {
+    	return $this->_nume_doctor;
+    }
+    
+    
+    public function setSpecialitate($text)
+    {
+    	$this->_nume_specialitate= (string) $text;
+    	return $this;
+    }
+    
+    public function getSpecialitate()
+    {
+    	return $this->_specialitate;
     }
 }
