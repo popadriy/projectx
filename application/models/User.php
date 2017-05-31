@@ -62,9 +62,9 @@ class Application_Model_User
     }
 
 
-    public function setId_user($id)
+    public function setId_user($id_user)
     {
-        $this->_id_user = (int) $id;
+        $this->_id_user = (int) $id_user;
         return $this;
     }
 
@@ -74,9 +74,9 @@ class Application_Model_User
     }
     
     
-    public function setNume_utilizator($text)
+    public function setNume_utilizator($nume_utilizator)
     {
-    	$this->_nume_utilizator = (string) $text;
+    	$this->_nume_utilizator = (string) $nume_utilizator;
     	return $this;
     }
     
@@ -86,9 +86,9 @@ class Application_Model_User
     }
     
     
-    public function setParola($text)
+    public function setParola($pass)
     {
-    	$this->_parola = (string) $text;
+    	$this->_parola = (string) $pass;
     	return $this;
     }
     
@@ -98,9 +98,9 @@ class Application_Model_User
     }
     
     
-    public function setNume_doctor($text)
+    public function setNume_doctor($nume_doctor)
     {
-    	$this->_nume_doctor= (string) $text;
+    	$this->_nume_doctor= (string) $nume_doctor;
     	return $this;
     }
     

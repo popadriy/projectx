@@ -76,11 +76,11 @@ class Application_Model_UserMapper
         );
         
 
-        if (null === ($id = $user->getId())) {
-            unset($data['id']);
+        if (null === ($id_user= $user->getId_user())) {
+            unset($data['id_user']);
             $this->getDbTable()->insert($data);
         } else {
-            $this->getDbTable()->update($data, array('id = ?' => $id));
+            $this->getDbTable()->update($data, array('id_user = ?' => $id_user));
         }
     }
 
@@ -88,17 +88,17 @@ class Application_Model_UserMapper
     /**
      * Find a record of Model, when found model is set
      *
-     * @param $id
+     * @param $id_user
      * @return Application_Model_User
      */
-    public function find($id, Application_Model_User $user)
+    public function find($id_user, Application_Model_User $user)
     {
-        $result = $this->getDbTable()->find($id);
+        $result = $this->getDbTable()->find($id_user);
         if (0 == count($result)) {
             return;
         }
         $row = $result->current();
-        $user->setId_user($row->id)
+        $user->setId_user($row->id_user)
                   ->setNume_utilizator($row->nume_utilizator)
                   ->setParola($row->parola)
                   ->setNume_doctor($row->nume_doctor)
@@ -117,7 +117,7 @@ class Application_Model_UserMapper
         $entries   = array();
         foreach ($resultSet as $row) {
             $entry = new Application_Model_User();
-            $entry->setId_user($row->id)
+            $entry->setId_user($row->id_user)
             	  ->setNume_utilizator($row->nume_utilizator)
             	  ->setParola($row->parola)
             	  ->setNume_doctor($row->nume_doctor)
