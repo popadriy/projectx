@@ -109,9 +109,13 @@ class Application_Model_Cabinet_MedicalMapper
         $resultSet = $this->getDbTable()->fetchAll();
         $entries   = array();
         foreach ($resultSet as $row) {
-            $entry = new Application_Model_Analiza();
-            $entry->setId_analiza($row->id_analiza)
-                ->setAnaliza($row->tip_analiza);
+            $entry = new Application_Model_Cabinet_Medical();
+            $entry->setIdCabinet($row->id_cabinet)
+                  ->setNumeCabinet($row->nume_cabinet)
+                  ->setLogoCabinet($row->logo_cabinet)
+                  ->setNrInregistrare($row->nr_inregistrare)
+                  ->setCui($row->cui)
+                  ->setCodIban($row->cod_iban);
             $entries[] = $entry;
         }
         return $entries;
