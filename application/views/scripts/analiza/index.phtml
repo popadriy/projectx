@@ -1,0 +1,14 @@
+<p><a href="<?php echo $this->url(
+        array(
+            'controller' => 'analiza',
+            'action'     => 'sign'
+        ),
+        'default',
+        true) ?>">Introduceti tipul de analiza</a></p>
+
+Analize: <br />
+<dl>
+    <?php foreach ($this->entries as $entry): ?>
+        <dt><?php echo $this->escape($entry->tip_analiza) ?></dt>
+    <?php endforeach ?>
+</dl>
