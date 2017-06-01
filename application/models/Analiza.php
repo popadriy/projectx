@@ -27,7 +27,7 @@ class Application_Model_Analiza
             $this->setOptions($options);
         }
     }
-
+//set
     public function setId_analiza($id)
     {
         $this->_id_analiza = (int) $id;
