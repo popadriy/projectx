@@ -62,6 +62,7 @@ class Application_Model_ConsultMapper{
             'observatii' => $consult->getObservatii(),
             'recomandari' => $consult->getRecomandari(),
             'tratament' => $consult->getTratament(),
+            'id_pacient' => $consult->getIdPacient(),
             'ultima_menstruatie'  => $consult->getUltimaMenstruatie(),
             'climax' => $consult->getClimax(),
             'ciclu_menstrual' => $consult->getCicluMenstrual(),
@@ -97,6 +98,7 @@ class Application_Model_ConsultMapper{
                 ->setObservatii($row->observatii)
                 ->setRecomandari($row->recomandari)
                 ->setTratament($row->tratament)
+                ->setIdPacient($row->id_pacient)
                 ->setUltimaMenstruatie($row->ultima_menstruatie)
                 ->setClimax($row->climax)
                 ->setCicluMenstrual($row->ciclu_menstrual)
@@ -122,6 +124,7 @@ class Application_Model_ConsultMapper{
                   ->setObservatii($row->observatii)
                   ->setRecomandari($row->recomandari)
                   ->setTratament($row->tratament)
+                  ->setIdPacient($row->id_pacient)
                   ->setUltimaMenstruatie($row->ultima_menstruatie)
                   ->setClimax($row->climax)
                   ->setCicluMenstrual($row->ciclu_menstrual)
