@@ -16,7 +16,7 @@
   * @author     Sauciuc Dragos George <dragos.sauciuc@qinsoft.ro>
   * @since      File available since Release 1.0.1
  */
-class Application_Model_GuestbookMapper
+class Application_Model_UserMapper
 {
     /**
      * Zend db table object
@@ -54,7 +54,7 @@ class Application_Model_GuestbookMapper
     public function getDbTable()
     {
         if (null === $this->_dbTable) {
-            $this->setDbTable('Application_Model_DbTable_Guestbook');
+            $this->setDbTable('Application_Model_DbTable_User');
         }
         return $this->_dbTable;
     }
@@ -63,18 +63,18 @@ class Application_Model_GuestbookMapper
     /**
      * Save data from model, when id is set, it will try and update
      *
-     * @param Application_Model_Guestbook instance
+     * @param Application_Model_User instance
      * @return void
      */
-    public function save(Application_Model_Guestbook $guestbook)
+    public function save(Application_Model_User $user)
     {
         $data = array(
-            'email'   => $guestbook->getEmail(),
-            'comment' => $guestbook->getComment(),
+            'email'   => $user->getEmail(),
+            'comment' => $user->getComment(),
             'created' => date('Y-m-d H:i:s'),
         );
 
-        if (null === ($id = $guestbook->getId())) {
+        if (null === ($id = $user->getId())) {
             unset($data['id']);
             $this->getDbTable()->insert($data);
         } else {
@@ -87,16 +87,16 @@ class Application_Model_GuestbookMapper
      * Find a record of Model, when found model is set
      *
      * @param $id
-     * @return Application_Model_Guestbook
+     * @return Application_Model_User
      */
-    public function find($id, Application_Model_Guestbook $guestbook)
+    public function find($id, Application_Model_User $user)
     {
         $result = $this->getDbTable()->find($id);
         if (0 == count($result)) {
             return;
         }
         $row = $result->current();
-        $guestbook->setId($row->id)
+        $user->setId($row->id)
                   ->setEmail($row->email)
                   ->setComment($row->comment)
                   ->setCreated($row->created);
@@ -106,14 +106,14 @@ class Application_Model_GuestbookMapper
     /**
      * Fetch all records from Model used
      *
-     * @return array of Application_Model_Guestbook
+     * @return array of Application_Model_User
      */
     public function fetchAll()
     {
     	$resultSet = $this->getDbTable()->fetchAll();
     	$entries   = array();
     	foreach ($resultSet as $row) {
-    		$entry = new Application_Model_Guestbook();
+    		$entry = new Application_Model_User();
     		$entry->setId($row->id)
     		->setEmail($row->email)
     		->setComment($row->comment)
@@ -122,31 +122,6 @@ class Application_Model_GuestbookMapper
     	}
     	return $entries;
     }
-    
-    /**
-     * Fetch all records from Model used
-     *
-     * @return array of Application_Model_Guestbook
-     */
-    public function findGuestbook($email)
-    {
-    	$select = $this->getDbTable()->select();
-    	$select->from($this->getDbTable()->_name);
-    	$select->where('email = ?', $email);
 
-    	$stmt = $select->query();
-    	$resultSet= $stmt->fetchAll();
-    	$entries   = array();
-    	foreach ($resultSet as $row) {
-    		$entry = new Application_Model_Guestbook();
-    		$entry->setId($row['id'])
-    		->setEmail($row['email'])
-    		->setComment($row['comment'])
-    		->setCreated($row['created']);
-    		$entries[] = $entry;
-    	}
-    	
-    	return $entries;
-    }
     
 }

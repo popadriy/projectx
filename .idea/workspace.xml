@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86a12137-20a0-4ed0-8a31-4e68174ab454" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/ConsultMapper.php" afterPath="$PROJECT_DIR$/application/models/ConsultMapper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/application/models/GuestbookMapper.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1955">
-              <caret line="123" column="5" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="123" selection-end-column="5" />
+              <caret line="123" column="5" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="123" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -71,7 +71,7 @@
       <file leaf-file-name="Consult.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/models/Consult.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="204">
               <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="31" />
               <folding>
                 <element signature="e#6#89#0#PHP" expanded="true" />
@@ -140,6 +140,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -248,8 +250,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -355,15 +355,16 @@
       <workItem from="1496177522527" duration="1920000" />
       <workItem from="1496308452127" duration="5015000" />
       <workItem from="1496336537360" duration="5142000" />
-      <workItem from="1496393207523" duration="142000" />
+      <workItem from="1496393207523" duration="674000" />
+      <workItem from="1496598429401" duration="601000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12219000" />
+    <option name="totallyTimeSpent" value="13352000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="25" y="51" width="1400" height="820" extended-state="0" />
+    <frame x="25" y="51" width="1400" height="820" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -779,14 +780,14 @@
     <entry file="file://$PROJECT_DIR$/application/models/GuestbookMapper.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1955">
-          <caret line="123" column="5" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="123" selection-end-column="5" />
+          <caret line="123" column="5" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="123" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/Consult.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="204">
           <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="31" />
           <folding>
             <element signature="e#6#89#0#PHP" expanded="true" />

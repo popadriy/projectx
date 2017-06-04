@@ -23,5 +23,5 @@ class Application_Model_DbTable_Guestbook extends Zend_Db_Table_Abstract
 	 * Table name(actual table name)
 	 * @var string
 	 */
-    protected $_name    = 'guestbook';
+    public $_name    = 'guestbook';
 }
