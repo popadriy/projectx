@@ -61,25 +61,63 @@ class Application_Model_User
         return $this;
     }
 
-    public function setNume_utilizator($text)
-    {
-        $this->_nume_utilizator = (string) $text;
-        return $this;
-    }
 
-    public function getNume_utilizator()
+    public function setId_user($id_user)
     {
-        return $this->_comment;
-    }
-
-    public function setId_user($id)
-    {
-        $this->_id_user = (int) $id;
+        $this->_id_user = (int) $id_user;
         return $this;
     }
 
     public function getId_user()
     {
     	return $this->_id_user;
+    }
+    
+    
+    public function setNume_utilizator($nume_utilizator)
+    {
+    	$this->_nume_utilizator = (string) $nume_utilizator;
+    	return $this;
+    }
+    
+    public function getNume_utilizator()
+    {
+    	return $this->_nume_utilizator;
+    }
+    
+    
+    public function setParola($pass)
+    {
+    	$this->_parola = (string) $pass;
+    	return $this;
+    }
+    
+    public function getParola()
+    {
+    	return $this->_parola;
+    }
+    
+    
+    public function setNume_doctor($nume_doctor)
+    {
+    	$this->_nume_doctor= (string) $nume_doctor;
+    	return $this;
+    }
+    
+    public function getNume_doctor()
+    {
+    	return $this->_nume_doctor;
+    }
+    
+    
+    public function setSpecialitate($text)
+    {
+    	$this->_nume_specialitate= (string) $text;
+    	return $this;
+    }
+    
+    public function getSpecialitate()
+    {
+    	return $this->_specialitate;
     }
 }

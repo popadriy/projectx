@@ -101,8 +101,8 @@ class Application_Model_GuestbookMapper
                   ->setComment($row->comment)
                   ->setCreated($row->created);
     }
-    
-    
+
+
     /**
      * Fetch all records from Model used
      *
@@ -110,43 +110,16 @@ class Application_Model_GuestbookMapper
      */
     public function fetchAll()
     {
-    	$resultSet = $this->getDbTable()->fetchAll();
-    	$entries   = array();
-    	foreach ($resultSet as $row) {
-    		$entry = new Application_Model_Guestbook();
-    		$entry->setId($row->id)
-    		->setEmail($row->email)
-    		->setComment($row->comment)
-    		->setCreated($row->created);
-    		$entries[] = $entry;
-    	}
-    	return $entries;
+        $resultSet = $this->getDbTable()->fetchAll();
+        $entries   = array();
+        foreach ($resultSet as $row) {
+            $entry = new Application_Model_Guestbook();
+            $entry->setId($row->id)
+                  ->setEmail($row->email)
+                  ->setComment($row->comment)
+                  ->setCreated($row->created);
+            $entries[] = $entry;
+        }
+        return $entries;
     }
-    
-    /**
-     * Fetch all records from Model used
-     *
-     * @return array of Application_Model_Guestbook
-     */
-    public function findGuestbook($email)
-    {
-    	$select = $this->getDbTable()->select();
-    	$select->from($this->getDbTable()->_name);
-    	$select->where('email = ?', $email);
-
-    	$stmt = $select->query();
-    	$resultSet= $stmt->fetchAll();
-    	$entries   = array();
-    	foreach ($resultSet as $row) {
-    		$entry = new Application_Model_Guestbook();
-    		$entry->setId($row['id'])
-    		->setEmail($row['email'])
-    		->setComment($row['comment'])
-    		->setCreated($row['created']);
-    		$entries[] = $entry;
-    	}
-    	
-    	return $entries;
-    }
-    
 }

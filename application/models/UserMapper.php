@@ -49,7 +49,7 @@ class Application_Model_UserMapper
     /**
      * Return instance of Zend_Db_Table_Abstract set for this mapper
      *
-     * @return Application_Model_DbTable_Guestbook
+     * @return Application_Model_DbTable_User
      */
     public function getDbTable()
     {
@@ -69,16 +69,18 @@ class Application_Model_UserMapper
     public function save(Application_Model_User $user)
     {
         $data = array(
-            'email'   => $user->getEmail(),
-            'comment' => $user->getComment(),
-            'created' => date('Y-m-d H:i:s'),
+            'nume_utilizator'   => $user->getNume_utilizator(),
+            'parola' => $user->getParola(),
+        	'nume_doctor' => $user->getNume_doctor(),
+        	'specialitate' => $user->getSpecialitate(),
         );
+        
 
-        if (null === ($id = $user->getId())) {
-            unset($data['id']);
+        if (null === ($id_user= $user->getId_user())) {
+            unset($data['id_user']);
             $this->getDbTable()->insert($data);
         } else {
-            $this->getDbTable()->update($data, array('id = ?' => $id));
+            $this->getDbTable()->update($data, array('id_user = ?' => $id_user));
         }
     }
 
@@ -86,23 +88,24 @@ class Application_Model_UserMapper
     /**
      * Find a record of Model, when found model is set
      *
-     * @param $id
+     * @param $id_user
      * @return Application_Model_User
      */
-    public function find($id, Application_Model_User $user)
+    public function find($id_user, Application_Model_User $user)
     {
-        $result = $this->getDbTable()->find($id);
+        $result = $this->getDbTable()->find($id_user);
         if (0 == count($result)) {
             return;
         }
         $row = $result->current();
-        $user->setId($row->id)
-                  ->setEmail($row->email)
-                  ->setComment($row->comment)
-                  ->setCreated($row->created);
+        $user->setId_user($row->id_user)
+                  ->setNume_utilizator($row->nume_utilizator)
+                  ->setParola($row->parola)
+                  ->setNume_doctor($row->nume_doctor)
+                  ->setSpecialitate($row->specialitate);
     }
-    
-    
+
+   
     /**
      * Fetch all records from Model used
      *
@@ -110,18 +113,17 @@ class Application_Model_UserMapper
      */
     public function fetchAll()
     {
-    	$resultSet = $this->getDbTable()->fetchAll();
-    	$entries   = array();
-    	foreach ($resultSet as $row) {
-    		$entry = new Application_Model_User();
-    		$entry->setId($row->id)
-    		->setEmail($row->email)
-    		->setComment($row->comment)
-    		->setCreated($row->created);
-    		$entries[] = $entry;
-    	}
-    	return $entries;
+        $resultSet = $this->getDbTable()->fetchAll();
+        $entries   = array();
+        foreach ($resultSet as $row) {
+            $entry = new Application_Model_User();
+            $entry->setId_user($row->id_user)
+            	  ->setNume_utilizator($row->nume_utilizator)
+            	  ->setParola($row->parola)
+            	  ->setNume_doctor($row->nume_doctor)
+            	  ->setSpecialitate($row->specialitate);
+            $entries[] = $entry;
+        }
+        return $entries;
     }
-
-    
 }
